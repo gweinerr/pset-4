@@ -19,9 +19,12 @@ let i = 0;
 
 console.log();
 
-if (upperBound % 2 === 0) {
-for (let i = lowerBound; i <= upperBound; i = i + 2)
-  sum = sum + i
+if (lowerBound % 2 !== 0) {
+lowerBound = lowerBound + 1
+}
+
+for (let i = lowerBound; i <= upperBound; i = i + 2) {
+  sum = sum + i;
 }
 
 sum = sum.toLocaleString(2);
