@@ -14,7 +14,7 @@ while (Number.isNaN(positiveInteger) || !Number.isInteger(positiveInteger) || po
 }
 
 while (positiveInteger > 0) {
-  let digit = positiveInteger % 10
+  let digit = positiveInteger % 10;
   positiveInteger = Math.floor(positiveInteger / 10);
   if (positiveInteger >= 1) {
     order = order + digit + ", "
