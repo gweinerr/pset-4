@@ -15,6 +15,11 @@ while (nonNegativeInteger >= MIN && nonNegativeInteger <= MAX) {
     if (nonNegativeInteger >= MIN && nonNegativeInteger <= MAX) {
         sum = parseFloat(sum) + parseFloat(nonNegativeInteger);
         ++numberOfValues
+        
+    } else if (numberOfValues == 0 && nonNegativeInteger < 0){
+      nonNegativeInteger = readlineSync.question("Non-negative integer: ");
+    } else if (numberOfValues > 1 && nonNegativeInteger > MAX) {
+      nonNegativeInteger = readlineSync.question("Non-negative integer: ");
     } else {
 
     }
@@ -22,6 +27,6 @@ while (nonNegativeInteger >= MIN && nonNegativeInteger <= MAX) {
 
 let average = sum / numberOfValues;
 
-average = average.toLocaleString("en", {minimumFractionDigits: 0, maximumFractionDigits: 3});
+average = average.toLocaleString("en", {minimumFractionDigits: 3, maximumFractionDigits: 3});
 
 console.log("\n" + average + ".\n");
