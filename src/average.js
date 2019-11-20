@@ -12,17 +12,15 @@ console.log("\n");
 while (nonNegativeInteger >= MIN && nonNegativeInteger <= MAX) {
     nonNegativeInteger = readlineSync.question("Non-negative integer: ");
 
-    if (nonNegativeInteger >= MIN && nonNegativeInteger <= MAX) {
+if (nonNegativeInteger > 0 && nonNegativeInteger <= MAX) {
         sum = parseFloat(sum) + parseFloat(nonNegativeInteger);
-        ++numberOfValues
-        
-    } else if (numberOfValues == 0 && nonNegativeInteger < 0){
-      nonNegativeInteger = readlineSync.question("Non-negative integer: ");
-    } else if (numberOfValues > 1 && nonNegativeInteger > MAX) {
-      nonNegativeInteger = readlineSync.question("Non-negative integer: ");
-    } else {
+        ++numberOfValues;
 
-    }
+      } else if (nonNegativeInteger < 0 && numberOfValues == 0) {
+        nonNegativeInteger = 0;
+      } else if (nonNegativeInteger > MAX){
+        nonNegativeInteger = 0
+      }
 }
 
 let average = sum / numberOfValues;
