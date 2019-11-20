@@ -8,7 +8,7 @@ console.log();
 
 do {
   nonNegativeInteger = Number(readlineSync.question("Non-negative integer: "));
-} while (nonNegativeInteger > MAX || nonNegativeInteger < MIN);
+} while (nonNegativeInteger > MAX || nonNegativeInteger < MIN || Number.isNaN(nonNegativeInteger) || !Number.isInteger(nonNegativeInteger));
 
 for (let i = 2; i < nonNegativeInteger; i++) {
   if (nonNegativeInteger % i == 0) {
