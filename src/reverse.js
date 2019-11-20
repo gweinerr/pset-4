@@ -7,8 +7,6 @@ positiveInteger = Number(readlineSync.question("\nPositive integer: "));
 let digit;
 let order = "";
 
-
-
 while (Number.isNaN(positiveInteger) || !Number.isInteger(positiveInteger) || positiveInteger > MAX || positiveInteger < MIN) {
   positiveInteger = Number(readlineSync.question("Positive integer: "));
 }
