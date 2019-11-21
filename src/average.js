@@ -7,7 +7,7 @@ let sum = 0;
 let nonNegativeInteger = 0;
 let numberOfValues = 0;
 
-console.log("\n");
+console.log();
 
 while (nonNegativeInteger >= MIN && nonNegativeInteger <= MAX) {
     nonNegativeInteger = readlineSync.question("Non-negative integer: ");
