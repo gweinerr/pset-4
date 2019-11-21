@@ -29,4 +29,4 @@ for (let i = lowerBound; i <= upperBound; i = i + 2) {
 
 sum = sum.toLocaleString(2);
 
-console.log(sum + ".");
+console.log(sum + ".\n");
