@@ -7,6 +7,7 @@ let display = "";
 
 console.log();
 
+// need to ask about this one because the number 1 does not print anything when added
 do {
     positiveInteger = Number(readlineSync.question("Positive integer: "));
 } while (positiveInteger < MIN || positiveInteger > MAX || !Number.isInteger(positiveInteger) || Number.isNaN(positiveInteger));
@@ -21,9 +22,9 @@ for (let i = 1; i <= (positiveInteger/2); i++) {
       display = display + i + ".";
       i = positiveInteger;
     } else {
-      // need to add a period at the end.
-  // factors = factors + ", "
-//  display = display + i + ", " + factors + ".";
+      // need to add a period at the end and make sure that the factors can be printed twice
+      factors = factors + ", ";
+      display = display + i + ", " + factors;
     }
   }
 }
