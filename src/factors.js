@@ -21,8 +21,9 @@ for (let i = 1; i <= (positiveInteger/2); i++) {
       display = display + i + ".";
       i = positiveInteger;
     } else {
-  //  factors = factors + ", "
-  //  display = display + i + ", " + factors + ".";
+      // need to add a period at the end.
+  // factors = factors + ", "
+//  display = display + i + ", " + factors + ".";
     }
   }
 }
