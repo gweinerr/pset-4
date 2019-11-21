@@ -2,31 +2,35 @@ const readlineSync = require("readline-sync");
 
 const MIN = 1;
 const MAX = Number.MAX_SAFE_INTEGER;
-let factors;
-let display = "";
+let factors = "\n";
+let flag = 0;
 
 console.log();
-
-// need to ask about this one because the number 1 does not print anything when added
 do {
     positiveInteger = Number(readlineSync.question("Positive integer: "));
 } while (positiveInteger < MIN || positiveInteger > MAX || !Number.isInteger(positiveInteger) || Number.isNaN(positiveInteger));
 
-for (let i = 1; i <= (positiveInteger/2); i++) {
-  if (positiveInteger % i == 0) {
-    factors = String(positiveInteger/i);
-    i = String(i);
-
-
-    if (Math.pow(i, 2) == positiveInteger) {
-      display = display + i + ".";
-      i = positiveInteger;
-    } else {
-      // need to add a period at the end and make sure that the factors can be printed twice
-      factors = factors + ", ";
-      display = display + i + ", " + factors;
+for (let i = 1; i <= positiveInteger/2; i++) {
+  remainder = positiveInteger % i
+  if (remainder == 0) {
+    if (factors.includes(", " + i + ", ") == true) {
+      break;
+    }
+    else {
+      if (positiveInteger / i == i) {
+        factors = factors + i + ".";
+        flag = 1
+      } else {
+        factors = factors + i + ", " + (positiveInteger / i) + ", ";
+      }
     }
   }
 }
 
-console.log("\n" + display + "\n");
+if(flag != 1) {
+  maliciousComma = factors.lastIndexOf(",");
+  factors = factors.slice(1, maliciousComma);
+  factors = factors + ".";
+}
+ console.log();
+console.log(factors + "\n");
