@@ -2,7 +2,7 @@ const readlineSync = require("readline-sync");
 
 const MIN = 1;
 const MAX = Number.MAX_SAFE_INTEGER;
-let factors = "";
+let factors = "\n";
 let flag = 0;
 
 console.log();
@@ -12,7 +12,7 @@ do {
 
 if (positiveInteger == 1) {
   console.log();
-  console.log("1.\n");
+  console.log("\n1.\n");
   flag = 2;
 } else {
   for (let i = 1; i <= positiveInteger/2; i++) {
@@ -37,10 +37,8 @@ if(flag == 0) {
   maliciousComma = factors.lastIndexOf(",");
   factors = factors.slice(1, maliciousComma);
   factors = factors + ".";
-}
-
-
-if (flag == 0 || flag == 1){
+  console.log("\n" + factors + "\n");
+} else if (flag == 1){
 console.log();
 console.log(factors + "\n");
 }
