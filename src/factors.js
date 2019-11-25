@@ -12,7 +12,7 @@ do {
 
 if (positiveInteger == 1) {
   console.log();
-  console.log("\n1.\n");
+  console.log("1.\n");
   flag = 2;
 } else {
   for (let i = 1; i <= positiveInteger/2; i++) {
